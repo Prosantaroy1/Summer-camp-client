@@ -1,11 +1,15 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
-const InstructorCard = ({instructor}) => {
-    //
-    const {InstructorName, email, image} = instructor;
+const InstructorCard = ({ instructor }) => {
+  //
+  const { InstructorName, email, image } = instructor;
   return (
-    <div>
-      <div className="card w-96 mb-4 bg-base-100 shadow-xl">
+    <div data-aos="flip-down">
+      <div className=" card w-96 mb-4 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img src={image} alt="Shoes" className="rounded-xl" />
         </figure>
