@@ -27,7 +27,7 @@ const ClassCard = ({item}) => {
                     Price</span>: ${price}
                 </p>
             </div>
-            <button className="btn mt-3 btn-warning">Add to Card</button>
+            <button className="btn mt-3 btn-warning">Buy Now</button>
         </div>
       </div>
     </div>
