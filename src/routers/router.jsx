@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         {
             path: 'instructor',
             element: <Instructorpage/>
-        }
+        }       
       ]
     },
   ]);

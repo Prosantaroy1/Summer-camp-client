@@ -3,7 +3,22 @@ import logo from "../../../assets/banner/logo_footer.png";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="mt-10">
+      <div className="bg-[#5ff75f] py-5">
+        <div className="w-[1000px] mx-auto flex justify-between">
+          <h4 className="text-2xl font-bold">Get the new Subscribetion</h4>
+          <div>
+            <label className="input-group">
+              <input
+                type="text"
+                placeholder="Enter your email?"
+                className="input input-bordered px-14"
+              />
+              <span>Email</span>
+            </label>
+          </div>
+        </div>
+      </div>
       <footer className="footer py-20 px-10 bg-[#161414] text-white">
         <div>
           <p>
@@ -40,7 +55,9 @@ const Footer = () => {
           <li className="link link-hover">Brooklyn, NY 10036, United States</li>
         </div>
       </footer>
-      <p className="text-white text-center pr-5 pb-5 bg-[#161414]">Copyright © 2023 - All right reserved by Language School</p>
+      <p className="text-white text-center pr-5 pb-5 bg-[#161414]">
+        Copyright © 2023 - All right reserved by Language School
+      </p>
     </div>
   );
 };
