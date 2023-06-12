@@ -1,0 +1,77 @@
+[
+    {
+        "_id": "642c155b2c4774f05c36eeaa",
+        "name": "Bacis English",
+        "seats": 20,
+        "InstructorName": "Md. Shamim Hosen",
+        "image": "https://images.pexels.com/photos/3755511/pexels-photo-3755511.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "popular",
+        "price": 140.7
+    },
+    {
+        "_id": "642c155b2c4774f05c36eeb9",
+        "name": "Advace English",
+        "seats": 10,
+        "InstructorName": "Md.Shanto Hosen",
+        "image": "https://images.pexels.com/photos/6502823/pexels-photo-6502823.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "popular",
+        "price": 74.7
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee7c",
+        "name": "German",
+        "seats": 10,
+        "InstructorName": "Susil Sen",
+        "image": "https://images.pexels.com/photos/6929205/pexels-photo-6929205.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "popular",
+        "price": 84.7
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee88",
+        "name": "Frensh",
+        "seats": 16,
+        "InstructorName": "Prosanta Roy",
+        "image": "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "popular",
+        "price": 64.7
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee7a",
+        "name": "Spainsh",
+        "seats": 9,
+        "InstructorName": "Mina Hasda",
+        "image": "https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "popular",
+        "price": 34.7
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee8c",
+        "name": "Hindi",
+        "seats": 20,
+        "InstructorName": "Akash Roy",
+        "image": "https://images.pexels.com/photos/3755511/pexels-photo-3755511.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "popular",
+        "price": 91.7
+    }
+    ,
+    {
+        "_id": "642c155b2c4774f05c36ee88",
+        "name": "Chinaes",
+        "seats": 16,
+        "InstructorName": "Dipu Roy",
+        "image": "https://images.pexels.com/photos/3755511/pexels-photo-3755511.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "normal",
+        "price": 64.7
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee7a",
+        "name": "Telegu",
+        "seats": 9,
+        "InstructorName": "Ismail Hosen",
+        "image": "https://images.pexels.com/photos/3755511/pexels-photo-3755511.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "normal",
+        "price": 34.7
+    }
+   
+   
+]
