@@ -1,12 +1,13 @@
 import React from "react";
 import logo from "../../../assets/banner/logo_footer.png";
+//import { BsFillSendCheckFill } from 'react-icons/bs';
 
 const Footer = () => {
   return (
     <div className="mt-10">
-      <div className="bg-[#5ff75f] py-5">
+      <div className="bg-[#393b39] py-5">
         <div className="w-[1000px] mx-auto flex justify-between">
-          <h4 className="text-2xl font-bold">Get the new Subscribetion</h4>
+          <h4 className="text-2xl text-white font-bold">Get the new Subscribetion</h4>
           <div>
             <label className="input-group">
               <input
@@ -14,7 +15,8 @@ const Footer = () => {
                 placeholder="Enter your email?"
                 className="input input-bordered px-14"
               />
-              <span>Email</span>
+              <span className="font-bold">Send Email</span>
+               {/*<BsFillSendCheckFill className="text-2xl"/> */}
             </label>
           </div>
         </div>
