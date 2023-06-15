@@ -1,14 +1,12 @@
 import { useState } from "react";
 
-const ClassesTable = ({items}) => {
+const ClassesTable = ({items, index}) => {
     //
   const {name, price, image,InstructorName, seats} = items;
-  //
- // const [index, setIndex] = useState(0);
   return (
     <>
       <tr>
-        <th>#</th>
+        <th>{index+1}</th>
         <td>
           <div className="avatar">
             <div className="mask mask-squircle w-20 h-20">

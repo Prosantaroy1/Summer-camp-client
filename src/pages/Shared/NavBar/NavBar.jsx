@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/banner/logo_footer.png'
 
 const NavBar = () => {
-    const navItems = <div className="font-bold flex text-xl">
+    const navItems = <div className="font-bold gap-4 flex text-xl">
        <li><Link to='/'>Home</Link></li>
        <li><Link to='/instructor'>Instructors</Link></li>
        <li><Link to='/class'>Class</Link></li>
@@ -47,7 +47,9 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-             <button className="btn btn-primary font-bold">Login</button>
+             <Link to='login'>
+                <button className="btn btn-primary font-bold">Login</button>
+             </Link>
         </div>
       </div>
     </div>

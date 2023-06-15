@@ -12,7 +12,7 @@ const Classespage = () => {
       });
   }, []);
   //console.log(allclass);
-  //const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
   return (
     <div>
       <div className="py-16 px-24 opacity-70  bg-[#e6c20e] text-black flex flex-col justify-center items-center">
@@ -38,9 +38,10 @@ const Classespage = () => {
             <tbody>
               {/* row 1 */}
                  {
-                  allclass.map(items => <ClassesTable
+                  allclass.map((items, index) => <ClassesTable
                     key={items._id}
                     items={items}
+                    index={index}
                   ></ClassesTable>)
                  } 
             </tbody>
