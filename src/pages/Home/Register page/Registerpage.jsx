@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import AuthContext from "../../../Provider/AuthContext";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Registerpage = () => {
   ///
@@ -10,21 +10,31 @@ const Registerpage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   //fireabse register
-  
-  const { createUser} = useContext(AuthContext);
+  const { createNewUser, updateNamePhoto } = useContext(AuthContext);
 
   const onSubmit = (data) => {
-     console.log(data)
-     createUser(data.email, data.password)
-      .then(result=>{
-         const user = result.user;
-         console.log(user)
+    ////
+    console.log(data);
+    createNewUser(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        /////update
+        updateNamePhoto(data.name, data.photo)
+          .then(() => {
+            console.log("updated user profile");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
-      .catch(error=>{
-         console.log(error);
-      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+  //
   return (
     <div className="pt-24">
       <form onSubmit={handleSubmit(onSubmit)} className="hero  mx-auto">
@@ -41,8 +51,8 @@ const Registerpage = () => {
                   placeholder="name"
                   className="input input-bordered"
                 />
-                  {errors.name && (
-                  <span className="text-red-600">This field is photoUrl!</span>
+                {errors.name && (
+                  <span className="text-red-600">This field is name!</span>
                 )}
               </div>
               <div className="form-control">
@@ -58,8 +68,8 @@ const Registerpage = () => {
                   placeholder="email"
                   className="input input-bordered"
                 />
-                  {errors.email && (
-                  <span className="text-red-600">This field is photoUrl!</span>
+                {errors.email && (
+                  <span className="text-red-600">This field is email!</span>
                 )}
               </div>
               <div className="form-control">
@@ -72,7 +82,7 @@ const Registerpage = () => {
                   placeholder="photo"
                   className="input input-bordered"
                 />
-                  {errors.photo && (
+                {errors.photo && (
                   <span className="text-red-600">This field is photoUrl!</span>
                 )}
               </div>
@@ -82,16 +92,18 @@ const Registerpage = () => {
                 </label>
                 <input
                   type="text"
-                  {...register("password", { required: true,
+                  {...register("password", {
+                    required: true,
                     maxLength: 20,
-                    minLength: 6, })}
+                    minLength: 6,
+                  })}
                   placeholder="password"
                   className="input input-bordered"
                 />
-                  {errors.password && (
+                {errors.password && (
                   <span className="text-red-600">This field is password!</span>
                 )}
-                  {errors.password?.type === "maxLength" && (
+                {errors.password?.type === "maxLength" && (
                   <p className="text-red-600" role="alert">
                     password is 20 char small required
                   </p>
@@ -102,7 +114,7 @@ const Registerpage = () => {
                   </p>
                 )}
               </div>
-             {/*
+              {/*
                <div className="form-control">
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
@@ -119,7 +131,7 @@ const Registerpage = () => {
               </div>
               */}
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="btn w-full btn-primary">Register</button>
               </div>
               <label className="label">
                 <p className="font-semibold">All ready account ?</p>
@@ -131,8 +143,8 @@ const Registerpage = () => {
               <div className="divider mb-0">OR</div>
             </div>
             <div className="form-control px-7 mb-3">
-                  <button className="btn btn-secondary">Google</button>
-             </div>
+              <button className="btn btn-secondary">Google</button>
+            </div>
           </div>
         </div>
       </form>

@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from '../../../assets/banner/logo_footer.png'
+import logo from "../../../assets/banner/logo_footer.png";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { Result } from "postcss";
 
 const NavBar = () => {
-    const navItems = <div className="font-bold gap-4 flex text-xl">
-       <li><Link to='/'>Home</Link></li>
-       <li><Link to='/instructor'>Instructors</Link></li>
-       <li><Link to='/class'>Class</Link></li>
-       <li><Link to='/dashboard'>Dashboard</Link></li>
+  ///
+  const { user, logOut } = useContext(AuthContext);
+  //
+  const handleLogout = () => {
+    logOut()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  ///navitem list
+  const navItems = (
+    <div className="font-bold gap-4 flex text-xl">
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/instructor">Instructors</Link>
+      </li>
+      <li>
+        <Link to="/class">Class</Link>
+      </li>
+      <li>
+        <Link to="/dashboard">Dashboard</Link>
+      </li>
     </div>
+  );
   return (
     <div>
       <div className="navbar   fixed z-50 max-w-screen-xl  mx-auto bg-opacity-70 text-[#f3f3f3] bg-[#7d7e7d]">
@@ -38,18 +64,37 @@ const NavBar = () => {
             </ul>
           </div>
           <figure>
-              <img src={logo} alt="" />
+            <img src={logo} alt="" />
           </figure>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-           {navItems}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
         <div className="navbar-end">
-             <Link to='login'>
-                <button className="btn btn-primary font-bold">Login</button>
-             </Link>
+          {user && (
+            <div className=" me-5">
+              <img
+                src={user?.photoURL}
+                className="rounded-full"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </div>
+          )}
+          {user ? (
+            <>
+              <Link to="/">
+                <button onClick={handleLogout} className="btn btn-primary">
+                  LogOut
+                </button>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="btn btn-primary">Login</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
