@@ -6,6 +6,8 @@ import Instructorpage from "../pages/Instructorpage/Instructorpage";
 import Dashboard from "../layout/Dashboard";
 import Loginpage from "../pages/Home/Login page/Loginpage";
 import Registerpage from "../pages/Home/Register page/Registerpage";
+import Mycart from "../Dashboard/My Cart/Mycart";
+import PaymentHistory from "../Dashboard/PaymentHistory/PaymentHistory";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +38,17 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard/>
+        element: <Dashboard/>,
+        children: [
+            {
+              path: 'mycart',
+              element: <Mycart/>
+            },
+            {
+              path:'/dashboard/history',
+              element: <PaymentHistory/>
+            }
+        ]
     }
   ]);
 
